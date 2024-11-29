@@ -1,5 +1,5 @@
 # OBS !!! : aparentimente o VScode não esta execultando o arquivo, tente usar outra IDLE, eu recomendo as online, como a " Programiz " 
-# sugestão : https://www.programiz.com/python-programming/online-compiler/
+# Sugestão: https://www.programiz.com/python-programming/online-compiler/
 
 import random
 
