@@ -6,6 +6,36 @@ print("Aqui, você pode transformar números em diferentes bases!")
 print("Escolha um número e uma opção para ver a mágica acontecer! ✨")
 print("Pronto para começar? Vamos lá! 🚀\n")
 
+# Mensagens para cada base
+binario_msgs = [
+    "Tá parecendo código de hacker, né não? 😂",
+    "Com isso aí dá pra invadir a NASA... ou não, cê que sabe kkk. 🤷‍♂️",
+    "Esse BINÁRIO tá com cara de filme de ficção científica! 🛸",
+    "Imagina mostrar isso pra vó e falar que é bruxaria? 🧙",
+    "A programação nunca foi tão engraçada, né não? 😂",
+    "Se isso não for mágica, não sei mais o que é! Se fosse no Brasil, ia chamar de 'bagulho doido'! 🎩",
+    "Agora você vai impressionar sua crush e ainda ganhar um intercâmbio pra Harvard! Quem diria? 🤣",
+    "A única coisa que falta aqui é o hexa... E cadê a seleção que não aparece? ⚽",
+    "Só faltava essa conversão pra gente ganhar a Copa do Mundo! 7x1? Aqui não! 😅",
+    "Se você mostrar isso pra sua mãe, ela vai achar que é coisa de hacker! 🕵️‍♂️",
+]
+
+octal_msgs = [
+    "Agora é só impressionar alguém... ou não. 😅",
+    "Nem sei quem usa isso, mas tá aí. 🤷",
+    "OCTAL? Nem o professor de matemática entende isso! pra que existe? kkk 🧮",
+    "Eu juro que isso faz sentido pra alguém... só não sei pra quem. 🤔",
+    "Olha só, um número que ninguém vai usar! 👏",
+]
+
+hexadecimal_msgs = [
+    "É isso que os nerds amam! 🤓",
+    "Agora você tá no nível programador raiz. 💻",
+    "Mostra isso pra um amigo e diz que é mágica! 🪄",
+    "Parece complicado, mas é só HEXA mesmo. 🤓",
+    "Esse HEXADECIMAL tá mais estiloso que eu no rolê! 😎",
+]
+
 while True:
     # Obtendo um número válido do usuário
     while True:
@@ -27,48 +57,29 @@ while True:
           [ 1 ] Transformar essa bagaça em BINÁRIO 🖥️
           [ 2 ] Mandar pra OCTAL, sei lá pra quê 🧮
           [ 3 ] HEXADECIMAL, pros programador raiz 🤓""")
-    option = int(input("Manda a boa, qual vai ser? "))
-
-    # Mensagens para cada base
-    binario_msgs = [
-        "Tá parecendo código de hacker, né não? 😂",
-        "Com isso aí dá pra invadir a NASA... ou não, cê que sabe kkk. 🤷‍♂️",
-        "Esse BINÁRIO tá com cara de filme de ficção científica! 🛸",
-        "Imagina mostrar isso pra vó e falar que é bruxaria? 🧙",
-        "A programação nunca foi tão engraçada, né não? 😂",
-        "Se isso não for mágica, não sei mais o que é! Se fosse no Brasil, ia chamar de 'bagulho doido'! 🎩",
-        "Agora você vai impressionar sua crush e ainda ganhar um intercâmbio pra Harvard! Quem diria? 🤣",
-        "A única coisa que falta aqui é o hexa... E cadê a seleção que não aparece? ⚽",
-        "Só faltava essa conversão pra gente ganhar a Copa do Mundo! 7x1? Aqui não! 😅",
-        "Se você mostrar isso pra sua mãe, ela vai achar que é coisa de hacker! 🕵️‍♂️",
-    ]
-
-    octal_msgs = [
-        "Agora é só impressionar alguém... ou não. 😅",
-        "Nem sei quem usa isso, mas tá aí. 🤷",
-        "OCTAL? Nem o professor de matemática entende isso! pra que existe? kkk 🧮",
-        "Eu juro que isso faz sentido pra alguém... só não sei pra quem. 🤔",
-        "Olha só, um número que ninguém vai usar! 👏",
-    ]
-
-    hexadecimal_msgs = [
-        "É isso que os nerds amam! 🤓",
-        "Agora você tá no nível programador raiz. 💻",
-        "Mostra isso pra um amigo e diz que é mágica! 🪄",
-        "Parece complicado, mas é só HEXA mesmo. 🤓",
-        "Esse HEXADECIMAL tá mais estiloso que eu no rolê! 😎",
-    ]
-
-    # Realizando a conversão com base na opção escolhida
-    if option == 1:
-        print("O número {} convertido pra BINÁRIO ficou assim: {}. {}".format(n, bin(n)[2:], random.choice(binario_msgs)))
-    elif option == 2:
-        print("O número {} em OCTAL é esse aqui: {}. {}".format(n, oct(n)[2:], random.choice(octal_msgs)))
-    elif option == 3:
-        print("HEXIDECIMAL na tela! O número {} vira {}. {}".format(n, hex(n)[2:], random.choice(hexadecimal_msgs)))
-    else:
-        print("AAAAAA! Opção inválida, amigão! Só vale 1, 2 ou 3. Bora tentar de novo! 😅")
-
+    
+    while True:  # Laço para garantir que o usuário escolha uma opção válida
+        try:
+            option = int(input("Manda a boa, qual vai ser? "))
+            if option == 1:
+                print("O número {} convertido pra BINÁRIO ficou assim: {}. {}".format(n, bin(n)[2:], random.choice(binario_msgs)))
+                break  # Sai do laço quando a opção for válida
+            elif option == 2:
+                print("O número {} em OCTAL é esse aqui: {}. {}".format(n, oct(n)[2:], random.choice(octal_msgs)))
+                break  # Sai do laço quando a opção for válida
+            elif option == 3:
+                print("HEXIDECIMAL na tela! O número {} vira {}. {}".format(n, hex(n)[2:], random.choice(hexadecimal_msgs)))
+                break  # Sai do laço quando a opção for válida
+            else:
+                print("AAAAAA! Opção inválida, amigão! Só vale 1, 2 ou 3. Bora tentar de novo! 😅")
+        except ValueError:
+            # Exibe a mensagem de erro e reexibe as opções
+            print("Isso não é uma opção válida! Escolha 1, 2 ou 3.")
+            print("""Agora escolhe uma das opções aí, mas escolhe direito hein: 
+                  [ 1 ] Transformar essa bagaça em BINÁRIO 🖥️
+                  [ 2 ] Mandar pra OCTAL, sei lá pra quê 🧮
+                  [ 3 ] HEXADECIMAL, pros programador raiz 🤓""")
+    
     # Perguntando se o usuário quer continuar
     continuar = input("Quer converter outro número? [sim]/[não]: ").strip().lower()
     if continuar != 'sim':
