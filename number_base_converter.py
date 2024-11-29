@@ -26,4 +26,3 @@ while True:
     if continue_choice != 'yes':
         print("Thank you for using the Number Converter! Goodbye! 🎉")
         break
-
